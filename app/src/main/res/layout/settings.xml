@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background">
+
+    <!-- ヘッダー部分 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/headerCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="#1A7B1FA2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <!-- 戻るボタン -->
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/back_button_background"
+                android:text="←"
+                android:textColor="#E1BEE7"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:stateListAnimator="@null"/>
+
+            <!-- タイトル -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="SYSTEM SETTINGS"
+                android:textColor="#E1BEE7"
+                android:textSize="20sp"
+                android:fontFamily="monospace"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <!-- ステータスインジケーター -->
+            <View
+                android:id="@+id/status_indicator"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:background="@drawable/status_indicator"
+                android:layout_marginStart="16dp"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- 設定項目のスクロールビュー -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:scrollbarThumbVertical="@drawable/scrollbar"
+        app:layout_constraintTop_toBottomOf="@+id/headerCard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#1A7B1FA2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Dev CONFIGURATION"
+                        android:textColor="#E1BEE7"
+                        android:textSize="16sp"
+                        android:fontFamily="monospace"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="16dp"/>
+
+
+                    <!-- カスタムテキスト追加エリア -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Model Name"
+                        android:textColor="#CE93D8"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif-light"
+                        android:layout_marginBottom="8dp"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="2dp"
+                        app:cardBackgroundColor="#0A4A148C"
+                        android:layout_marginBottom="12dp">
+
+                        <EditText
+                            android:id="@+id/hotwordModelInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:hint="Enter Model Name..."
+                            android:textColorHint="#60CE93D8"
+                            android:textColor="#E1BEE7"
+                            android:padding="12dp"
+                            android:textSize="14sp"
+                            android:inputType="textMultiLine"
+                            android:maxLines="3"
+                            android:fontFamily="sans-serif-light"/>
+
+                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Porcupine API key"
+                        android:textColor="#CE93D8"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif-light"
+                        android:layout_marginBottom="8dp"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="2dp"
+                        app:cardBackgroundColor="#0A4A148C"
+                        android:layout_marginBottom="12dp">
+
+                        <EditText
+                            android:id="@+id/customTextInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:hint="Enter Porcupine API key..."
+                            android:textColorHint="#60CE93D8"
+                            android:textColor="#E1BEE7"
+                            android:padding="12dp"
+                            android:textSize="14sp"
+                            android:inputType="textMultiLine"
+                            android:maxLines="3"
+                            android:fontFamily="sans-serif-light"/>
+
+                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Gemini API key"
+                        android:textColor="#CE93D8"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif-light"
+                        android:layout_marginBottom="8dp"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="2dp"
+                        app:cardBackgroundColor="#0A4A148C"
+                        android:layout_marginBottom="12dp">
+
+                        <EditText
+                            android:id="@+id/geminiAPIInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:hint="Enter Gemini API key..."
+                            android:textColorHint="#60CE93D8"
+                            android:textColor="#E1BEE7"
+                            android:padding="12dp"
+                            android:textSize="14sp"
+                            android:inputType="textMultiLine"
+                            android:maxLines="3"
+                            android:fontFamily="sans-serif-light"/>
+
+                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Server Address"
+                        android:textColor="#CE93D8"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif-light"
+                        android:layout_marginBottom="8dp"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="2dp"
+                        app:cardBackgroundColor="#0A4A148C"
+                        android:layout_marginBottom="12dp">
+
+                        <EditText
+                            android:id="@+id/serverAddressInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:hint="Enter Server Address..."
+                            android:textColorHint="#60CE93D8"
+                            android:textColor="#E1BEE7"
+                            android:padding="12dp"
+                            android:textSize="14sp"
+                            android:inputType="textMultiLine"
+                            android:maxLines="3"
+                            android:fontFamily="sans-serif-light"/>
+
+                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Server Password"
+                        android:textColor="#CE93D8"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif-light"
+                        android:layout_marginBottom="8dp"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="2dp"
+                        app:cardBackgroundColor="#0A4A148C"
+                        android:layout_marginBottom="12dp">
+
+                        <EditText
+                            android:id="@+id/serverPasswordInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:hint="Enter Server Password..."
+                            android:textColorHint="#60CE93D8"
+                            android:textColor="#E1BEE7"
+                            android:padding="12dp"
+                            android:textSize="14sp"
+                            android:inputType="textMultiLine"
+                            android:maxLines="3"
+                            android:fontFamily="sans-serif-light"/>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- 追加ボタン -->
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:layout_width="120dp"-->
+<!--                        android:layout_height="40dp"-->
+<!--                        app:cardCornerRadius="20dp"-->
+<!--                        app:cardElevation="4dp"-->
+<!--                        app:cardBackgroundColor="#7B1FA2"-->
+<!--                        android:layout_gravity="end"-->
+<!--                        android:layout_marginBottom="16dp">-->
+
+<!--                        <Button-->
+<!--                            android:id="@+id/addTextButton"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:background="@drawable/add_text_button_background"-->
+<!--                            android:text="ADD TEXT"-->
+<!--                            android:textColor="#E1BEE7"-->
+<!--                            android:textSize="12sp"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:fontFamily="sans-serif-condensed"-->
+<!--                            android:stateListAnimator="@null"/>-->
+
+<!--                    </androidx.cardview.widget.CardView>-->
+
+                    <!-- 保存されたテキスト一覧 -->
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Saved Messages"-->
+<!--                        android:textColor="#CE93D8"-->
+<!--                        android:textSize="14sp"-->
+<!--                        android:fontFamily="sans-serif-light"-->
+<!--                        android:layout_marginBottom="8dp"/>-->
+
+<!--                    <androidx.recyclerview.widget.RecyclerView-->
+<!--                        android:id="@+id/savedTextsRecyclerView"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:background="@drawable/saved_texts_background"-->
+<!--                        android:padding="8dp"-->
+<!--                        android:maxHeight="120dp"/>-->
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <!-- 音声設定 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#1A7B1FA2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="VOICE CONFIGURATION"
+                        android:textColor="#E1BEE7"
+                        android:textSize="16sp"
+                        android:fontFamily="monospace"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- 音声ON/OFF -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Voice Response"
+                            android:textColor="#CE93D8"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif-light"/>
+
+                        <Switch
+                            android:id="@+id/voiceSwitch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:thumbTint="#E1BEE7"
+                            android:trackTint="#7B1FA2"/>
+
+                    </LinearLayout>
+
+                    <!-- 音量調整 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Volume"
+                            android:textColor="#CE93D8"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif-light"
+                            android:layout_marginEnd="16dp"/>
+
+                        <SeekBar
+                            android:id="@+id/volumeSeekBar"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:max="100"
+                            android:progress="75"
+                            android:progressTint="#E1BEE7"
+                            android:thumbTint="#E1BEE7"/>
+
+                        <TextView
+                            android:id="@+id/volumeText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="75%"
+                            android:textColor="#CE93D8"
+                            android:textSize="12sp"
+                            android:fontFamily="monospace"
+                            android:layout_marginStart="16dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- セキュリティ設定 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#1A7B1FA2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="SECURITY PROTOCOL"
+                        android:textColor="#E1BEE7"
+                        android:textSize="16sp"
+                        android:fontFamily="monospace"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- 音声認証 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Voice Authentication"
+                            android:textColor="#CE93D8"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif-light"/>
+
+                        <Switch
+                            android:id="@+id/voiceAuthSwitch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:thumbTint="#E1BEE7"
+                            android:trackTint="#7B1FA2"/>
+
+                    </LinearLayout>
+
+                    <!-- プライベートモード -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Private Mode"
+                            android:textColor="#CE93D8"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif-light"/>
+
+                        <Switch
+                            android:id="@+id/privateModeSwitch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:thumbTint="#E1BEE7"
+                            android:trackTint="#7B1FA2"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- システム情報 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#1A7B1FA2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="SYSTEM INFORMATION"
+                        android:textColor="#E1BEE7"
+                        android:textSize="16sp"
+                        android:fontFamily="monospace"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- バージョン情報 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Version"
+                            android:textColor="#CE93D8"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif-light"/>
+
+                        <TextView
+                            android:id="@+id/versionText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="v2.4.7"
+                            android:textColor="#E1BEE7"
+                            android:textSize="14sp"
+                            android:fontFamily="monospace"/>
+
+                    </LinearLayout>
+
+                    <!-- アップタイム -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Uptime"
+                            android:textColor="#CE93D8"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif-light"/>
+
+                        <TextView
+                            android:id="@+id/uptimeText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="72:14:32"
+                            android:textColor="#E1BEE7"
+                            android:textSize="14sp"
+                            android:fontFamily="monospace"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
