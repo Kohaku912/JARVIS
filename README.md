@@ -40,7 +40,7 @@
 
 | 呼びかけ時 | メイン画面 |
 |:--:|:--:|
-| ![jarvisを呼んだ時](https://github.com/Kohaku912/JARVIS/blob/main/images/home.jpg?raw=true) | ![アプリメイン画面](https://github.com/Kohaku912/JARVIS/blob/main/images/home.jpg?raw=true) |
+| ![jarvisを呼んだ時](https://github.com/Kohaku912/JARVIS/blob/main/images/home.jpg?raw=true) | ![アプリメイン画面](https://github.com/Kohaku912/JARVIS/blob/main/images/main.jpg?raw=true) |
 
 ---
 
